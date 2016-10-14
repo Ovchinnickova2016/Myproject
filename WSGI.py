@@ -8,9 +8,10 @@ def app(environ, start_response):
     start_response(status, response_headers) # создание ответа, со ссылкой на index.html
     path = environ['PATH_INFO'] 
     if path == '':
-        path = 'index.html'
+        path = './index.html'
     file = open(path, 'r')  #открытие файла на чтение
     return [file.read()]
+
 
 #класс Middleware
 class Middleware(object):
